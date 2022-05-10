@@ -20,4 +20,6 @@ Or
 sev --help
 ```
 
+### Output example
 
+![output image](/src/resources/screenshot.png "output example")
