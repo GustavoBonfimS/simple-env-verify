@@ -1,6 +1,6 @@
 {
   "name": "simple-env-verify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.mjs",
   "author": "Gustavo Bonfim",
   "license": "MIT",
@@ -10,7 +10,8 @@
     "url": "https://github.com/GustavoBonfimS/simple-env-verify"
   },
   "bin": {
-    "env-verify": "./src/index.mjs"
+    "simple-env-verify": "./src/index.mjs",
+    "sev": "./src/index.mjs"
   },
   "dependencies": {
     "chalk": "^5.0.1",
