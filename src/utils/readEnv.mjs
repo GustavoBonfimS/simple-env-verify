@@ -1,4 +1,4 @@
-import LineByLine from "line-by-line";
+import LineByLine from 'line-by-line';
 
 function readEnv(filePath) {
   return new Promise((resolve, reject) => {
@@ -6,16 +6,16 @@ function readEnv(filePath) {
 
     const envObj = {};
 
-    lr.on("line", (line) => {
-      const [key, value] = line.split("=");
+    lr.on('line', (line) => {
+      const [key, value] = line.split('=');
       envObj[key] = value;
     });
 
-    lr.on("end", () => {
+    lr.on('end', () => {
       resolve(envObj);
     });
 
-    lr.on("error", (err) => {
+    lr.on('error', (err) => {
       reject(err);
     });
   });
