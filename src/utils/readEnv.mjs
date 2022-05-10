@@ -1,18 +1,18 @@
-import lineByLine from "line-by-line";
+import LineByLine from "line-by-line";
 
 function readEnv(filePath) {
   return new Promise((resolve, reject) => {
-    const lr = new lineByLine(filePath);
+    const lr = new LineByLine(filePath);
 
-    const env_obj = {};
+    const envObj = {};
 
     lr.on("line", (line) => {
       const [key, value] = line.split("=");
-      env_obj[key] = value;
+      envObj[key] = value;
     });
 
     lr.on("end", () => {
-      resolve(env_obj);
+      resolve(envObj);
     });
 
     lr.on("error", (err) => {

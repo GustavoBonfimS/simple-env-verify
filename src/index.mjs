@@ -6,7 +6,7 @@ import chalk from "chalk";
 import readEnv from "./utils/readEnv.mjs";
 
 async function main() {
-  const log = console.log;
+  const { log } = console;
 
   const options = yargs
     .usage("Usage: envy-verify --example <.env.example> --env <.env>")
@@ -23,13 +23,13 @@ async function main() {
 
   log(chalk.yellow("Reading example file..."));
 
-  const env_example = await readEnv(options.ex);
+  const envExample = await readEnv(options.ex);
 
   log(chalk.yellow("Reading env file..."));
 
   const env = await readEnv(options.en);
 
-  Object.keys(env_example).forEach((key) => {
+  Object.keys(envExample).forEach((key) => {
     if (key in env) {
       log(chalk.green(`✅ ${key} is ok`));
     } else {

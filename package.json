@@ -1,11 +1,24 @@
 {
   "name": "env-verify",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.mjs",
+  "author": "Gustavo Bonfim",
   "license": "MIT",
+  "keywords": ["env", "verify", "env-verify"],
+  "bin": {
+    "env-verify": "./src/index.mjs"
+  },
   "dependencies": {
     "chalk": "^5.0.1",
     "line-by-line": "^0.1.6",
     "yargs": "13.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2"
   }
 }
