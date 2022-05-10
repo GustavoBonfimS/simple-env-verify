@@ -31,7 +31,11 @@ async function main() {
 
   Object.keys(envExample).forEach((key) => {
     if (key in env) {
-      log(chalk.green(`✅ ${key} is ok`));
+      if (env[key]) {
+        log(chalk.green(`✅ ${key} is ok`));
+      } else {
+        log(chalk.red(`❓ ${key} is on .env but without value`));
+      }
     } else {
       log(chalk.red(`❌ ${key} is missing`));
     }
