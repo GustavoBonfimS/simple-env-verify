@@ -10,15 +10,21 @@ async function main() {
 
   const options = yargs
     .usage('Usage: envy-verify --example <.env.example> --env <.env>')
-    .option('ex', {
-      alias: 'example',
+    .option('example', {
+      alias: 'ex',
       describe: 'Your .env example file',
       demandOption: true,
     })
-    .option('en', {
-      alias: 'env',
+    .option('env', {
+      alias: 'en',
       describe: 'Your .env file',
       demandOption: true,
+    })
+    .option('error', {
+      alias: 'e',
+      describe: 'Throw an error if a variable is missing',
+      type: 'boolean',
+      default: false,
     }).argv;
 
   log(chalk.yellow('Reading example file...'));
@@ -34,10 +40,13 @@ async function main() {
       if (env[key]) {
         log(chalk.green(`✅ ${key} is ok`));
       } else {
-        log(chalk.red(`❓ ${key} is on .env but without value`));
+        log(chalk.yellow(`❓ ${key} is on .env but without value`));
       }
     } else {
       log(chalk.red(`❌ ${key} is missing`));
+      if (options.error) {
+        throw new Error(`${key} is missing`);
+      }
     }
   });
 }
