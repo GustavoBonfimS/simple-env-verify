@@ -20,6 +20,9 @@ Or
 sev --help
 ```
 
+### Error
+You can pass --error or -e to throw an error if some key is missing in .env
+
 ### Output example
 
 ![output image](/src/resources/screenshot.png "output example")
