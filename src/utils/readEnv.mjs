@@ -2,7 +2,9 @@ import LineByLine from 'line-by-line';
 
 function readEnv(filePath) {
   return new Promise((resolve, reject) => {
-    const lr = new LineByLine(filePath);
+    const lr = new LineByLine(filePath, {
+      skipEmptyLines: true,
+    });
 
     const envObj = {};
 
