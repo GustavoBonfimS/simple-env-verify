@@ -9,7 +9,7 @@ async function main() {
   const { log } = console;
 
   const options = yargs
-    .usage('Usage: envy-verify --example <.env.example> --env <.env>')
+    .usage('Usage: simple-env-verify --example <.env.example> --env <.env>')
     .option('example', {
       alias: 'ex',
       describe: 'Your .env example file',

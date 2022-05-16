@@ -1,10 +1,13 @@
 {
   "name": "simple-env-verify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "src/index.mjs",
   "author": "Gustavo Bonfim",
   "license": "MIT",
   "keywords": ["env", "verify", "env-verify"],
+  "scripts": {
+    "dev": "node src/index.mjs --env .env --example .env.example"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/GustavoBonfimS/simple-env-verify"
